@@ -48,8 +48,8 @@ class RoomPackageController extends Controller
         $data['slug'] = Str::slug($request->title);
 
         RoomPackage::create($data);
-        Alert::success('Upload Data Kamar Sukses!', 'Data Kamar berhasil di tambahkan');
 
+        Alert::success('Upload Data Kamar Sukses!', 'Data Kamar berhasil di tambahkan');
         return redirect()->route('room-package.index');
     }
 

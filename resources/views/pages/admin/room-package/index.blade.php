@@ -33,7 +33,7 @@
                             <td>{{ $item->title}}</td>
                             <td>{{ $item->location}}</td>
                             <td>{{ $item->type}}</td>
-                            <td>{{ $item->price}}</td>
+                            <td>{{'Rp ' . number_format($item->price, 0, ".", "." )}}</td>
                             <td>
                                 <a href="{{ route('room-package.edit', $item ->id) }}" class="btn btn-info">
                                 <i class="fa fa-pencil-alt"></i>

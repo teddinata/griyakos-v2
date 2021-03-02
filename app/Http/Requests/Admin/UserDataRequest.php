@@ -30,7 +30,16 @@ class UserDataRequest extends FormRequest
             'room_number' => 'required|max:255',
             'checkin' => 'required|date',
             'duration' => 'required|max:255',
-            'tagihan' => 'required|integer'
+            'tagihan' => 'required|integer',
+            'alamat' => 'required|max:255', 
+            'RT' => 'required|max:3', 
+            'RW' => 'required|max:3', 
+            'kelurahan' => 'required|max:255',
+            'kecamatan' => 'required|max:255', 
+            'kabupaten' => 'required|max:255', 
+            'provinsi' => 'required|max:255',
+            'negara' => 'required|max:255',
+            'checkout' => 'required|date',
         ];
     }
 }

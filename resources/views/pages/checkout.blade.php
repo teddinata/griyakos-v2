@@ -38,7 +38,7 @@
                             @endif
                             <h1>Konfirmasi Pembayaran</h1>
                         <p>
-                            Book to {{ $item->room_package->title}}, 
+                            Pesan Kamar {{ $item->room_package->title}}, 
                             {{ $item->room_package->location}}
                         </p>
                             <div class="attendee">
@@ -47,7 +47,7 @@
                                         <tr>
                                             <td>Picture</td>
                                             <td>Nama</td>
-                                            <td>Nationality</td>
+                                            <td>Kewarganegaraan</td>
                                             <td>Pekerjaan</td>
                                             <td>Checkin</td>
                                             <td></td>
@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="card card-details card-right">
-                            <h2>Checkout Information</h2>
+                            <h2>Informasi Checkout</h2>
                             <table class="trip-information">
                                     <tr>
                                         <th width="50%">Member</th>
@@ -171,30 +171,41 @@
                                         
                                     </tr>
                                     <tr>
-                                        <th width="50%">Price Room</th>
+                                        <th width="50%">Durasi</th>
                                         <td width="50%" class="text-right">
-                                            Rp {{$item->room_package->price}} / Kamar
+                                        {{ $item->room_type->durasi }}
                                         </td>
                                         
                                     </tr>
                                     <tr>
-                                            <th width="50%">Total</th>
+                                        <th width="50%">Check In</th>
+                                        <td width="50%" class="text-right">
+                                            {{$item->details->first() ? date('d-m-Y', strtotime($item->details->first()->checkin)) : '0'}}
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th width="50%">Harga</th>
                                             <td width="50%" class="text-right">
-                                                Rp {{$item->transaction_total }} / Kamar
+                                                 {{'Rp ' . number_format($item->transaction_total, 0, ".", ".")}} / Kamar
                                             </td>
-                                            
                                         </tr>
                                     <tr>
-                                        <th width="50%">Total (+Unique)</th>
+                                            <th width="50%">Kode Unik</th>
+                                            <td width="50%" class="text-right text-total">
+                                            <span class="text-orange">{{$item->kode_unik}}</span>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <th width="50%">Total (+Kode Unik)</th>
                                         <td width="50%" class="text-right text-total">
-                                        <span class="text-blue">Rp {{$item->transaction_total}}+</span>
-                                        <span class="text-orange">{{mt_rand(0,999)}}</span>
-                                        </td>
+                                        <span class="text-blue"> {{'Rp ' . number_format($item->transaction_total+$item->kode_unik, 0, "kode_unik", "." )}}</span>
+                                      
                                     </tr>
                                 </table>
 
                                 <hr/>
-                                <h2>Payment Instruction</h2>
+                                <h2>Instruksi Pembayaran</h2>
                                 <p class="payment-instructions">
                                         Transfer sesuai ditambah dengan kode unik agar 
                                         dapat terverifikasi kurang dari 3 menit.
@@ -236,12 +247,12 @@
                        
                         <div class="join-container">
                                 <a href="{{ route ('checkout-success', $item->id) }}" class="btn btn-block btn-join-now mt-3 py-2">
-                                    I Have Made Payment
+                                    Saya Sudah Melakukan Pembayaran
                                 </a>
                             </div>
                             <div class="text-center mt-3">
                                 <a href="{{ route ('detail', $item->room_package->slug)}}" class="text-muted">
-                                    Cancel Booking
+                                    Batalkan Pemesanan
                                 </a>
                             </div>
                     </div>

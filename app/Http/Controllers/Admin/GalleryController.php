@@ -49,7 +49,7 @@ class GalleryController extends Controller
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
-            'assets/gallery', 'public'
+            'assets/room_gallery', 'public'
         );
 
         Gallery::create($data);

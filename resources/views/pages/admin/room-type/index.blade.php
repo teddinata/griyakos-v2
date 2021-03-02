@@ -35,7 +35,7 @@
                                 {{$item->durasi}}
                             </td>
                             <td>
-                                {{$item->price}}
+                                {{'Rp ' . number_format($item->price, 0, ".", "." )}}
                             </td>
                             <td>
                                 <a href="{{ route('room-type.edit', $item ->id) }}" class="btn btn-info">

@@ -302,7 +302,7 @@
                                 <tr>
                                 <tr>
                                   <td><strong>Jumlah Pembayaran</strong></td>
-                                  <td style="text-align: right;">Rp {{$data->room_package->price}}</td>
+                                  <td style="text-align: right;">{{'Rp ' . number_format($data->transaction_total+$data->kode_unik, 0, "kode_unik", "." )}}</td>
                                 <tr>
                               </table>
                             </td>

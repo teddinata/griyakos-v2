@@ -14,7 +14,7 @@
    
     @include('includes.navbar')
     @yield('content')
-   
+    @include('sweetalert::alert')
     
     @stack('prepend-script')
     @include('includes.script')

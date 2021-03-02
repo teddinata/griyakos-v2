@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\TransactionRequest;
 use App\Transaction;
+use App\Pembayaran;
+use App\Http\Requests\Admin\PembayaranRequest;
+use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TransactionController extends Controller
 {
@@ -20,7 +24,7 @@ class TransactionController extends Controller
     public function index()
     {
         $items = Transaction::with([
-            'details', 'room_package', 'user'
+            'details', 'room_package', 'user', 'room_type'
         ])->get();
 
         return view ('pages.admin.transaction.index', [
@@ -35,7 +39,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -63,7 +67,7 @@ class TransactionController extends Controller
     public function show($id)
     {
         $item = Transaction::with([
-            'details', 'room_package', 'user'
+            'details', 'room_package', 'user', 'room_type'
         ])->findOrFail($id);
 
         return view ('pages.admin.transaction.detail', [
@@ -82,6 +86,14 @@ class TransactionController extends Controller
         $item = Transaction::findOrFail($id);
 
         return view ('pages.admin.transaction.edit', [
+            'item' => $item
+        ]);
+    }
+    public function ubah($id)
+    {
+        $item = Transaction::findOrFail($id);
+
+        return view ('pages.pembayaran.index', [
             'item' => $item
         ]);
     }
@@ -123,7 +135,7 @@ class TransactionController extends Controller
     {
         $id = Auth::user()->id;
         $items = Transaction::with([
-            'details', 'room_package'
+            'details', 'room_package', 'room_type'
         ])->where('users_id', $id)->get();
 
         return view ('pages.history-order.index', [
@@ -134,11 +146,35 @@ class TransactionController extends Controller
     public function detail($id)
     {
         $item = Transaction::with([
-            'details', 'room_package'
+            'details', 'room_package', 'room_type'
         ])->findOrFail($id);
 
         return view('pages.history-order.detail', [
             'item' => $item
         ]);
     }
+
+    public function cetak_pdf($id)
+    {
+
+        $item = Transaction::with([
+            'details', 'room_package', 'user', 'room_type'
+        ])->findOrFail($id);
+
+        $pdf = PDF::loadview('pages.admin.transaction.nota_pdf',['item' => $item]);
+    	return $pdf->stream('nota.pdf');
+    }
+
+    public function invoice_pdf($id)
+    {
+
+        $item = Transaction::with([
+            'details', 'room_package', 'user', 'room_type'
+        ])->findOrFail($id);
+
+        $pdf = PDF::loadview('pages.history-order.invoice_pdf',['item' => $item]);
+    	return $pdf->stream('invoice.pdf');
+    }
+
+   
 }

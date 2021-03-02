@@ -34,7 +34,7 @@
                                     <div class="room-location">{{$item->title}}</div>
                                     <div class="room-button mt-auto">
                                         <a href="{{ url ('detail', $item->slug)}}" class="btn btn-room-details px-4">
-                                            View Detail
+                                            Lihat Kamar
                                         </a>
                                     </div>
                                 </div>

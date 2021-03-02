@@ -9,9 +9,12 @@ class UserData extends Model
 {
     use SoftDeletes;
 
+    
+    
     protected $fillable = [
         'name', 'identity_card', 'phone', 'room_number',
-        'checkin', 'duration', 'tagihan'
+        'checkin', 'checkout', 'duration', 'tagihan', 'alamat', 'RT', 'RW', 'kelurahan',
+        'kecamatan', 'kabupaten', 'provinsi', 'negara'
     ];
 
     // protected $hidden = [

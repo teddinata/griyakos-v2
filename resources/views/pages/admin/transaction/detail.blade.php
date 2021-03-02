@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <th>Total Transaksi</th>
-                <td>Rp{{$item->transaction_total}}</td>
+                <td>{{'Rp ' . number_format($item->transaction_total+$item->kode_unik, 0, "kode_unik", "." )}}</td>
             </tr>
             <tr>
                     <th>Status Transaksi</th>

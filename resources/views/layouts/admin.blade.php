@@ -8,10 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+     <!-- Favicon  -->
+     <link rel="icon" href="/images/Icon.png" />
   <title>GRIYA KOS - Admin</title>
 
   @include('includes.admin.style')
+  @stack('prepend-style')
+    @include('includes.style')
+    @stack('addon-style')
 
 </head>
 
@@ -73,6 +77,10 @@
   </div>
 
  @include('includes.admin.script')
+
+ @stack('prepend-script')
+ @include('includes.script')
+ @stack('addon-script')
 
 </body>
 

@@ -73,27 +73,38 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="card card-details card-right">
-                            <h2>Grab your room now</h2>
+                            <h2>Ambil Kamar yang Anda Inginkan</h2>
+                            @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                            <div class="members my-2"></div>
+                           <form action="{{ route ('checkout_process', $item->id)}}" method="POST">
+                            @csrf
                            <label for="doeRoom" id="sr-only">Pilih Tanggal Masuk</label>
                            <div class="input-group mb-2 mr-sm-2">
-                               <input type="text" class="form-control datepicker"
+                               <input type="text" class="form-control datepicker" name="checkInDate"
                                id="doeRoom" placeholder="Choose your date">
                            </div>
                            <div> 
-                            <form action="{{ route ('checkout_process', $item->id)}}" method="POST">
-                                @csrf
+                            
                             <h6>Pilih Durasi Sewa</h6>
                              <label for="durasi" class="sr-only">Pilih Durasi Sewa</label>
                              <select 
-                             name="durasi" 
-                             id="durasi" 
+                             name="roomTypes" 
+                             id="roomTypes" 
                              required class="form-control">
-                                 <option value="Pilih Durasi">Pilih Durasi</option>
+                                 <option roomPrice="0" value="">Pilih Durasi</option>
                                  @foreach ($item->room_types as $room_type)
-                                    <option 
-                                        value="{{$room_type->durasi}}" 
-                                        >{{$room_type->durasi}} - Rp {{$room_type->price}}
+                                    <option
+                                        roomPrice={{number_format($room_type->price, 0, ".", ".")}}
+                                        value="{{$room_type->id}}" 
+                                        >{{$room_type->durasi}}
                                     </option>
                                  @endforeach
                                 
@@ -103,7 +114,7 @@
                            
                          
                                 <hr>
-                                <h6>Room Information</h6>
+                                <h6>Informasi Kamar</h6>
                                 <table class="trip-information">
                                     <tr>
                                         <th width="50%">Kamar Tersedia</th>
@@ -115,8 +126,8 @@
                                  
                                     <tr>
                                         <th width="50%">Harga</th>
-                                        <td width="50%" class="text-right">
-                                            Rp {{$item->price}}
+                                        <td width="50%" class="text-right" id="totalPrice">
+                                            Rp 0
                                         </td>
                                     </tr>   
                                 </table>
@@ -127,7 +138,7 @@
                             @auth
                        
                                 <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
-                                    Book Now
+                                    Pesan Kamar
                                 </button>
                             </form>
                             @endauth
@@ -154,6 +165,7 @@
 @push('addon-script')
 <script src="{{ url ('frontend/libraries/xzoom/xzoom.min.js')}}"></script>
 <script src="{{ url ('frontend/libraries/gijgo/js/gijgo.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         $('.xzoom, .xzoom-gallery').xzoom ({
@@ -162,12 +174,24 @@
             tint: '#333',
             xoffset: 15,
         });
-      
+    
+       
+    var date = new Date();
+    date.setDate(date.getDate());
     $('.datepicker').datepicker({
+        minDate: date,
         uiLibrary: 'bootstrap4',
         icons:{
             rightIcon: '<img src="{{url ('frontend/images/doe.png') }}" />'
         }
+    });
+
+    
+
+    $("#roomTypes").change(function(){
+        let selectedRoom = $(this).children("option:selected").attr("roomPrice");
+        $("#totalPrice").empty();
+        $("#totalPrice").html(`Rp ${selectedRoom}`);
     });
 });
 </script>

@@ -10,7 +10,7 @@ class RoomType extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'room_packages_id', 'durasi', 'price'
+        'room_packages_id', 'durasi', 'price', 'kode_unik'
     ];
 
     protected $hidden = [

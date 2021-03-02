@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserDataRequest;
 use App\UserData;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -58,7 +59,11 @@ class UserDataController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = UserData::findOrFail($id);
+
+        return view ('pages.admin.userdata.detail', [
+            'item' => $item
+        ]);
     }
 
     /**
@@ -107,4 +112,24 @@ class UserDataController extends Controller
         Alert::success('Selamat!', 'Data Pengguna Sukses dihapus');
         return redirect()->route('userdata.index');
     }
+
+    public function cetak_pdf()
+    {
+
+        $items = UserData::all();
+
+        $pdf = PDF::loadview('pages.admin.userdata.data_pengguna_pdf',['items' => $items]);
+    	return $pdf->download('laporan-pengguna.pdf');
+    }
+
+    public function nota($id)
+    {
+
+        $item = UserData::findOrFail($id);
+
+        $pdf = PDF::loadview('pages.admin.userdata.nota',['item' => $item]);
+    	return $pdf->stream();
+    }
+
+    
 }

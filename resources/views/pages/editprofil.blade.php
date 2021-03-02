@@ -76,7 +76,7 @@
                                     <div class="form-group">
                                         <label for="birth">Tanggal Lahir</label>
                                         <input type="text" class="form-control datepicker"
-                                        id="birth" placeholder="Tanggal Lahir" value data-type="{{$item->birth}}">
+                                        id="birth" name="birth" placeholder="Tanggal Lahir" value data-type="{{$item->birth}}">
                                     
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
         });
       
     $('.datepicker').datepicker({
-        format: 'dd-mm-yyyy',
+        format: 'yyyy-mm-dd',
         uiLibrary: 'bootstrap4',
         icons:{
             rightIcon: '<img src="{{url ('frontend/images/doe.png') }}" />'

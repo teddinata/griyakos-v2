@@ -8,6 +8,7 @@ use App\RoomPackage;
 use App\TravelPackage;
 use App\Transaction;
 use App\TravelTransaction;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -16,14 +17,15 @@ class DashboardController extends Controller
 
         return view('pages.admin.dashboard',[
             'room_package' => RoomPackage::count(),
-            'transaction' => Transaction::count(),
+            'transaction' => Transaction::where('transaction_status', 'SUCCESS')->sum('transaction_total'),
             'transaction_pending' => Transaction::where('transaction_status', 'PENDING')->count(),
             'transaction_success' => Transaction::where('transaction_status', 'SUCCESS')->count(),
             'travel_package' => TravelPackage::count(),
             'travel_transaction' => TravelTransaction::count(),
             'travel_transaction_pending' => TravelTransaction::where('travel_transaction_status', 'PENDING')->count(),
             'travel_transaction_success' => TravelTransaction::where('travel_transaction_status', 'SUCCESS')->count(),
-        ]);
-            
+            'user' => User::count()
+            ]);
+
     }
 }
