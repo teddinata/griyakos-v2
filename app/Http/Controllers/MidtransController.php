@@ -32,7 +32,7 @@ class MidtransController extends Controller
          $status = $notification->transaction_status;
          $type = $notification->payment_type;
          $fraud = $notification->fraud_status;
-         $order_id = $order[1];
+         $order_id = 'MIDTRANS-' . $notification->order_id;
 
           //Cari transaksi berdasarkan ID
           $transaction = Transaction::findOrFail($order_id);
