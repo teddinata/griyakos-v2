@@ -27,9 +27,9 @@
                     <a href="#testimonialContent" class="nav-link">Testimonial</a>
                 </li>
             </ul>
-                
-                
-            
+
+
+
 
               @guest
                    <!-- Mobile Button-->
@@ -39,7 +39,7 @@
                         Masuk
                     </button>
                 </form>
-                
+
                 <!-- Desktop Button-->
                 <form class="form-inline my-2 my-lg-0 d-none d-md-block ">
                         <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" type="button"
@@ -55,29 +55,34 @@
                     <li class="nav-item dropdown" style="color: #fff;">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Halo, {{ Auth::user()->name }}! <span class="caret"></span>
+                            <img src="{{asset('images/'.$user->avatar)}}" class="user-photo"  alt="" style="border-radius: 50%">
+
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a href=" {{url('profil')}}" class="dropdown-item" > Profil</a>
                         <a href="{{ url ('editprofil')}}" class="dropdown-item">Edit Profil</a>
                         <a href="{{ route ('history-order')}}" class="dropdown-item">Transaksi Saya</a>
-                            
+
                         </div>
                     </li>
                 </ul>
-                   
+
                <form class="form-inline d-sm-block d-md-none" action="{{ url ('logout')}}" method="POST">
-                @csrf 
-                
+                @csrf
+
                     <button class="btn btn-login my-2 my-sm-0" >
+
                         Keluar
                     </button>
                 </form>
-               
+
                 <!-- Desktop Button-->
-             
+
                 <form class="form-inline my-2 my-lg-0 d-none d-md-block "action="{{ url ('logout')}}" method="POST">
                     @csrf
-                        <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4"> 
+                        <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+
                                    Keluar
                         </button>
                 </form>

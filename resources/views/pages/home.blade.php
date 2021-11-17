@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-GRIYA KOS
+GRIYA KOS CILACAP JALAN BAWEAN
 @endsection
 
 @section('content')
@@ -12,16 +12,16 @@ GRIYA KOS
             <br/>
             Semudah Rebahan
         </h1>
-        <p class="mt-3" data-aos="zoom-in" data-aos-duration="1000"> 
-                Bayar Kos Jadi Lebih
+        <p class="mt-3" data-aos="zoom-in" data-aos-duration="1000">
+               <strong> Cara Baru Cari Kos Nyaman
                 <br/>
-                Mudah dan Efisien
+                Mudah dan Banyak Diskon</strong>
         </p>
 
     <a href="{{ route ('login')}}" class="btn btn-get-started px-4 mt-4">
             Get Started
         </a>
-    </header> 
+    </header>
 
     <main>
         <div class="container" >
@@ -41,14 +41,14 @@ GRIYA KOS
                 <div class="col-3 col-md-2 stats-detail">
                     <h2>2</h2>
                     <p>Partners</p>
-                </div>    
+                </div>
             </section>
         </div>
 
         <section class="section-popular" id="popular">
         <div class="container"  data-aos="fade-up">
             <div class="row">
-                <div class="col text-center 
+                <div class="col text-center
                 section-popular-heading">
                 <h2>
                     Pilihan Kamar
@@ -64,10 +64,12 @@ GRIYA KOS
         </section>
 
         <section class="section-room-content" id="room-content">
-            <div class="container" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="container" >
                 <div class="section-room-travel row justify-content-center">
+                    @php $incrementRoom = 0 @endphp
                    @foreach ($items as $item)
-                   <div class="col-sm-6 col-md-4 col-lg-3">
+                   <div class="col-sm-6 col-md-4 col-lg-3"
+                   data-aos="zoom-in" data-aos-duration="{{ $incrementRoom +=600 }}">
                     <div class="card-room text-center d-flex flex-column"
                     style="background-image: url('{{ $item->galleries->count() ? Storage::url
                    ($item->galleries->first()->image) : ''}} ') ;">
@@ -81,7 +83,7 @@ GRIYA KOS
                     </div>
                 </div>
                    @endforeach
-                    
+
                 </div>
             </div>
         </section>
@@ -91,7 +93,7 @@ GRIYA KOS
         <section class="section-popular-travel" id="popular-travel">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center 
+                    <div class="col text-center
                     section-popular-heading-wisata">
                     <h2>
                         Wisata Populer di Cilacap
@@ -106,15 +108,16 @@ GRIYA KOS
                 </div>
             </div>
             </section>
-    
-            <section class="section-popular-content" id="popularContent" data-aos="zoom-in-up" data-aos-duration="1500">
+
+            <section class="section-popular-content" id="popularContent" >
                 <div class="container" >
-                    <div class="section-travel-content row 
+                    <div class="section-travel-content row
                     justify-content-center">
+                    @php $incrementTravel = 0 @endphp
                        @foreach ($details as $detail)
-                           
-                       
-                        <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="col-sm-6 col-md-4 col-lg-3"
+                            data-aos="zoom-in-up"
+                            data-aos-duration="{{ $incrementTravel +=600 }}">
                             <div class="card-travel text-center d-flex flex-column"
                             style="background-image: url('{{$detail->travel_galleries->count() ? Storage::url
                             ($detail->travel_galleries->first()->image) :''}}') ;" >
@@ -127,7 +130,7 @@ GRIYA KOS
                                 </div>
                             </div>
                         </div>
-                        
+
                         @endforeach
                     </div>
                 </div>
@@ -141,7 +144,7 @@ GRIYA KOS
                                     They Are Loving Us
                             </h2>
                             <p>
-                                    Moments were giving them 
+                                    Moments were giving them
                                     <br/>
                                     the best experience
                             </p>
@@ -156,7 +159,7 @@ GRIYA KOS
                         <div class="col-sm-6 col-md-6 col-lg-4">
                             <div class="card card-testimonial text-center">
                                 <div class="testimonial-content" data-aos="fade-up" data-aos-duration="2000">
-                                    <img src="frontend/images/testimonial1.png" 
+                                    <img src="frontend/images/testimonial1.png"
                                     alt="user"
                                     class="mb-4 rounded-circle">
                                     <h3 class="mb-4">Teddi</h3>
@@ -177,7 +180,7 @@ GRIYA KOS
                         <div class="col-sm-6 col-md-6 col-lg-4">
                             <div class="card card-testimonial text-center">
                                 <div class="testimonial-content" data-aos="fade-up" data-aos-duration="2000">
-                                    <img src="frontend/images/testimonial2.png" 
+                                    <img src="frontend/images/testimonial2.png"
                                     alt="user"
                                     class="mb-4 rounded-circle">
                                     <h3 class="mb-4">Julian</h3>
@@ -196,7 +199,7 @@ GRIYA KOS
                         <div class="col-sm-6 col-md-6 col-lg-4">
                             <div class="card card-testimonial text-center">
                                 <div class="testimonial-content">
-                                    <img src="frontend/images/testimonial3.png" 
+                                    <img src="frontend/images/testimonial3.png"
                                     alt="user"
                                     class="mb-4 rounded-circle">
                                     <h3 class="mb-4">Angga</h3>
@@ -204,7 +207,7 @@ GRIYA KOS
                                         "Pelayanannya bagus dan
                                         Fast response. Perjalanan
                                         Kerja saya jadi mudah tidak
-                                        perlu muter2 cari 
+                                        perlu muter2 cari
                                         hotel."
                                     </p>
                                 </div>
@@ -227,7 +230,7 @@ GRIYA KOS
                         </div>
                     </div>
             </section>
-          
+
 
     </main>
 @endsection

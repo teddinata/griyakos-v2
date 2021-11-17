@@ -38,7 +38,7 @@
                             @endif
                             <h1>Konfirmasi Pembayaran</h1>
                         <p>
-                            Pesan Kamar {{ $item->room_package->title}}, 
+                            Pesan Kamar {{ $item->room_package->title}},
                             {{ $item->room_package->location}}
                         </p>
                             <div class="attendee">
@@ -47,19 +47,23 @@
                                         <tr>
                                             <td>Picture</td>
                                             <td>Nama</td>
-                                            <td>Kewarganegaraan</td>
+                                            <td>No HP</td>
                                             <td>Pekerjaan</td>
                                             <td>Checkin</td>
                                             <td></td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($item->details as $detail)
                                         <tr>
                                                 <td>
-                                                    <img src="https://ui-avatars.com/api/?name={{$detail->username}}"
-                                                    height="60" class="rounded-circle" name="avatar"/>
+                                                    @if (Auth::user()->avatar)
+                                                        <img src="{{asset('images/'.$user->avatar)}}" class="user-photo" alt="" width="40" height="40" style="border-radius: 50%">
+                                                    @else
+                                                    <img src="http://ui-avatars.com/api/?name={{$detail->username}}"  height="60" class="rounded-circle" name="avatar"/>
+                                                    @endif
+
                                                 </td>
+                                                @forelse ($item->details as $detail)
                                                 <td class="align-middle">
                                                     {{$detail->username}}
                                                 </td>
@@ -77,11 +81,11 @@
                                                 <a href="{{ route ('checkout-remove', $detail->id)}}">
                                                         <img src="{{ url ('frontend/images/ic_remove.png')}}" alt="">
                                                     </a>
-                                                    </td>    
+                                                    </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="6" class="text-center"> 
+                                                <td colspan="6" class="text-center">
                                                     Tidak ada Member
                                                 </td>
                                             </tr>
@@ -95,9 +99,9 @@
                                         $item->id)}}">
                                         @csrf
                                         <label for="inputName" class="sr-only">name</label>
-                                        <select 
-                                        name="inputName" 
-                                        id="inputName" 
+                                        <select
+                                        name="inputName"
+                                        id="inputName"
                                         class="custom-select mb-2 mr-sm-2 ">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nyonya">Nyonya</option>
@@ -105,10 +109,10 @@
                                         </select>
 
                                         <label for="username" class="sr-only">Nama</label>
-                                        <input type="text" 
+                                        <input type="text"
                                         name="username"
                                         class="form-control mb-2 mr-sm-2"
-                                        id="username" 
+                                        id="username"
                                         placeholder="Username"
                                         />
 
@@ -127,7 +131,7 @@
                                             type="text"
                                             name="job"
                                             class="form-control mb-2 mr-sm-2"
-                                            
+
                                             id="job"
                                             placeholder="Job"
                                         />
@@ -168,21 +172,21 @@
                                         <td width="50%" class="text-right">
                                         {{ $item->details->count() }} person
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Durasi</th>
                                         <td width="50%" class="text-right">
                                         {{ $item->room_type->durasi }}
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Check In</th>
                                         <td width="50%" class="text-right">
                                             {{$item->details->first() ? date('d-m-Y', strtotime($item->details->first()->checkin)) : '0'}}
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Harga</th>
@@ -200,14 +204,14 @@
                                         <th width="50%">Total (+Kode Unik)</th>
                                         <td width="50%" class="text-right text-total">
                                         <span class="text-blue"> {{'Rp ' . number_format($item->transaction_total+$item->kode_unik, 0, "kode_unik", "." )}}</span>
-                                      
+
                                     </tr>
                                 </table>
 
                                 <hr/>
                                 <h2>Instruksi Pembayaran</h2>
                                 <p class="payment-instructions">
-                                        Transfer sesuai ditambah dengan kode unik agar 
+                                        Transfer sesuai ditambah dengan kode unik agar
                                         dapat terverifikasi kurang dari 3 menit.
                                 </p>
                                 <div class="bank">
@@ -221,7 +225,7 @@
                                             <p>
                                                     Bank Mandiri
                                             </p>
-                                            
+
                                         </div>
                                         <div class="clearfix">
 
@@ -237,14 +241,14 @@
                                                             Jenius
                                                     </p>
                                                 </div>
-                                            <div class="clearfix"> 
+                                            <div class="clearfix">
                                         </div>
                                     </div>
                                 </div>
-                        </div>  
+                        </div>
                     </div>
-                          
-                       
+
+
                         <div class="join-container">
                                 <a href="{{ route ('checkout-success', $item->id) }}" class="btn btn-block btn-join-now mt-3 py-2">
                                     Saya Sudah Melakukan Pembayaran
@@ -259,7 +263,7 @@
                 </div>
             </div>
 
-            
+
     </section>
 </main>
 @endsection

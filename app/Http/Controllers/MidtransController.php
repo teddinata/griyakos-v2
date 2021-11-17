@@ -16,6 +16,7 @@ class MidtransController extends Controller
 {
     public function notificationHandler(Request $request)
     {
+        dd("ini midtrans");
          //set konfigurasi midtrans
          Config::$serverKey = config('midtrans.serverKey');
          Config::$isProduction = config('midtrans.isProduction');
@@ -32,14 +33,14 @@ class MidtransController extends Controller
          $status = $notification->transaction_status;
          $type = $notification->payment_type;
          $fraud = $notification->fraud_status;
-         $order_id = 'MIDTRANS-' . $notification->order_id;
+         $order_id = $order[1];
 
           //Cari transaksi berdasarkan ID
           $transaction = Transaction::findOrFail($order_id);
 
-
           //Handle Notification Status
-
+          if($transaction)
+          {
           if($status == 'capture') {
             if($type == 'credit_card') {
                 if($fraud == 'challenge') {
@@ -50,7 +51,6 @@ class MidtransController extends Controller
                 }
             }
         }
-
         else if($status == 'settlement') {
             $transaction->transaction_status = 'SUCCESS';
         }
@@ -60,7 +60,7 @@ class MidtransController extends Controller
         }
 
         else if($status == 'deny') {
-            $transaction->transaction_status = 'CANCELLED';
+            $transaction->transaction_status = 'FAILED';
         }
 
         else if($status == 'expire') {
@@ -68,13 +68,15 @@ class MidtransController extends Controller
         }
 
         else if($status == 'cancel') {
-            $transaction->transaction_status = 'CANCELLED';
+            $transaction->transaction_status = 'FAILED';
         }
 
         //simpan transaksi
         $transaction->save();
 
         //kirim email ke user
+        if($transaction)
+        {
         if($status == 'capture' && $fraud == 'accept')
         {
             Mail::to($transaction->user)->send(
@@ -111,15 +113,15 @@ class MidtransController extends Controller
                 ]
             ]);
         }
-
             return response()->json([
                 'meta' => [
                     'code' => 200,
                     'message' => 'Midtrans notification success'
                 ]
             ]);
-
+        }
     }
+}
 
     public function finishRedirect(Request $request)
     {

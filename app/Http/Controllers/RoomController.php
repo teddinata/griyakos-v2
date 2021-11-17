@@ -17,13 +17,15 @@ class RoomController extends Controller
     public function index()
     {
         $items = RoomPackage::with(['galleries'])->get();
-       
-    
+        $user = auth()->user();
+
+
        return view('pages.room',[
            'items' => $items,
-          
+           'user' => $user
+
         ]);
-        
+
     }
 
     /**

@@ -11,16 +11,17 @@ class ProfilController extends Controller
 {
     public function index ()
     {
-    
-      $item = auth()->user();
-      
-                
-             
+
+      $user = auth()->user();
+
+
+
     return view ('pages.profil ',[
-        'item' => $item
-       
+        // 'item' => $item,
+        'user' => $user
+
     ]);
-    
+
 }
 }
 

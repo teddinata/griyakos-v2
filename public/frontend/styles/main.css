@@ -16,7 +16,11 @@ body {
   font-weight: bold;
   color: #071C4D !important;
 }
-
+.navbar .user-photo {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
 .btn-navbar-right {
   margin-top: -10px !important;
   margin-bottom: -8px !important;
@@ -38,7 +42,7 @@ body {
 header {
   padding: 180px 0 165px;
   margin-top: -70px;
-  background-image: url("../images/header/header.jpg");
+  background-image: url("../images/header/detailkos@2x.jpg");
   background-size: cover;
 }
 
@@ -59,7 +63,7 @@ header p {
 header .btn-get-started {
   background-color: rgb(235, 134, 57);
   color: #fff;
-  
+
 }
 
 header .btn-get-started:hover {
@@ -67,8 +71,10 @@ header .btn-get-started:hover {
   color: #fff;
   transform: scale(1.2);
   transition: transform .5s;  /* Animation */
- 
+
 }
+
+
 
 
 .section-stats {
@@ -257,7 +263,7 @@ header .btn-get-started:hover {
   font-size: 26px;
   text-align: center;
   color: #071c4d;
-  
+
 }
 .card-testimonial:hover {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
@@ -630,7 +636,7 @@ header .btn-get-started:hover {
 .section-details .breadcrumb {
   background-color: transparent;
   padding: 0;
-  
+
   margin-top: -100px;
 }
 

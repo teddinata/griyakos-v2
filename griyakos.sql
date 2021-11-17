@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Feb 2021 pada 04.11
+-- Waktu pembuatan: 03 Mar 2021 pada 13.05
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -82,7 +82,16 @@ INSERT INTO `galleries` (`id`, `room_packages_id`, `image`, `deleted_at`, `creat
 (1, 1, 'assets/gallery/MK6jJn9YKyS4mUuSalhrcKihHxWgN13ILJNUIlv3.jpeg', '2020-10-08 09:13:56', '2020-03-25 10:54:17', '2020-10-08 09:13:56'),
 (2, 2, 'assets/gallery/WNMTP9PMEMXA5wpU6diGjQrMve4p9v3wxYjXNrgi.jpeg', '2020-10-08 09:13:59', '2020-03-28 10:29:05', '2020-10-08 09:13:59'),
 (3, 1, 'assets/gallery/S1bOMhrW5A8qbxEkTbRob9CQ1Plb12FjM439h3q9.jpeg', '2020-10-08 09:14:02', '2020-09-13 21:44:43', '2020-10-08 09:14:02'),
-(4, 1, 'assets/gallery/WItNSGAdbMgN16y8PX1ohjWSIkQ4cPBqqPBzFzfl.jpeg', NULL, '2020-10-08 09:15:15', '2020-10-08 09:15:15');
+(4, 1, 'assets/gallery/WItNSGAdbMgN16y8PX1ohjWSIkQ4cPBqqPBzFzfl.jpeg', '2021-03-03 03:21:25', '2020-10-08 09:15:15', '2021-03-03 03:21:25'),
+(5, 1, 'assets/room_gallery/uHqBVxuHeD5Dkg4lMQutjt4oupBZCUj049ZJm296.jpeg', '2021-03-03 03:24:20', '2021-03-03 03:21:49', '2021-03-03 03:24:20'),
+(6, 1, 'assets/room_gallery/hgO4Py7HEU50MMnX2MDsL93SVLjZbw41gbtW8KLO.jpeg', NULL, '2021-03-03 03:24:34', '2021-03-03 03:24:34'),
+(7, 1, 'assets/room_gallery/6gACQ4vEgAWwRRdghxydIptP9NPO4Tfsb9KKHinf.jpeg', NULL, '2021-03-03 03:24:57', '2021-03-03 03:24:57'),
+(8, 1, 'assets/room_gallery/zUmNgTWBT2RvFIXdqKD2E94PpUXH1IW1gq0IGgFK.jpeg', NULL, '2021-03-03 03:25:17', '2021-03-03 03:25:17'),
+(9, 1, 'assets/room_gallery/u8po2DMfs6urE3wyXovXvapZiymqEikzkJDZ7RV6.jpeg', NULL, '2021-03-03 03:25:31', '2021-03-03 03:25:31'),
+(10, 2, 'assets/room_gallery/t9rWDlmTOGiguSjiDArow1Zmja9m9fvCeB7ixLld.jpeg', NULL, '2021-03-03 03:25:49', '2021-03-03 03:25:49'),
+(11, 2, 'assets/room_gallery/wTVxl9N1sHrfvUWZKEGII1HSpfPPPZxwUD7wSiNR.jpeg', NULL, '2021-03-03 03:26:11', '2021-03-03 03:26:11'),
+(12, 2, 'assets/room_gallery/MI1yCGOM5r1ejWrQ192OUcyCjJHJ2wcveCVgdXr1.jpeg', NULL, '2021-03-03 03:26:28', '2021-03-03 03:26:28'),
+(13, 2, 'assets/room_gallery/zvI6ih1PEWeZwpzw0JuIVjcAtJfieenaezcGEgZ0.jpeg', NULL, '2021-03-03 03:26:47', '2021-03-03 03:26:47');
 
 -- --------------------------------------------------------
 
@@ -219,9 +228,9 @@ CREATE TABLE `room_packages` (
 --
 
 INSERT INTO `room_packages` (`id`, `title`, `slug`, `location`, `about`, `type`, `price`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Griya Kos 1', 'griya-kos-1', 'Gunungsimping, Cilacap', 'Griya Kos adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel \"Kos\", Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.  Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.', '1', 500000, NULL, '2020-03-25 10:53:51', '2020-03-28 10:27:34'),
-(2, 'Griya Kos 2', 'griya-kos-2', 'Gunungsimping, Cilacap', 'Griya Kos adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel \"Kos\", Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.  Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.', '5 Kamar', 600000, NULL, '2020-03-28 10:28:17', '2020-03-28 10:28:17'),
-(3, 'Griya Kos 3', 'griya-kos-3', 'Gunungsimping, Cilacap', 'Griya Kos adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel \"Kos\", Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.  Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.', '2', 0, NULL, '2020-03-28 21:15:46', '2020-03-28 21:15:46');
+(1, 'Griya Kos 1', 'griya-kos-1', 'Jl. Bawean no. 119 Gunungsimping, Cilacap', '<p>Griya Kos adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel &quot;Kos&quot;, Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.</p>\r\n\r\n<p>&gt;</p>\r\n\r\n<p>&gt;</p>', '1', 0, NULL, '2020-03-25 10:53:51', '2021-03-03 03:40:28'),
+(2, 'Griya Kos 2', 'griya-kos-2', 'Gunungsimping, Cilacap', '<p><strong>Griya Kos</strong> adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel &quot;Kos&quot;, Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.</p>\r\n\r\n<p>&gt;</p>', '1', 0, NULL, '2020-03-28 10:28:17', '2021-03-03 03:40:17'),
+(3, 'Griya Kos 3', 'griya-kos-3', 'Gunungsimping, Cilacap', 'Griya Kos adalah indekos atau kos yang berlokasi di Cilacap. Meskipun dengan embel-embel \"Kos\", Griya Kos tidak hanya melayani sewa kos bulanan, tetapi bisa juga sewa harian yang cocok digunakan untuk para backpacker atau wisatawan yang menginginkan penginapan murah dan terjangkau.  Fasilitas yang diberikan pun tidak seadanya, yaitu berupa tempat tidur berukuran queen (160 cm x 200 cm), kamar mandi dalam, meja rias, dan lemari. Tempat parkir luas dan dekat dengan pusat kota mampu menjadi- kan sebagai penunjang fasilitas dari Griya Kos.', '2', 0, '2021-03-03 03:26:57', '2020-03-28 21:15:46', '2021-03-03 03:26:57');
 
 -- --------------------------------------------------------
 
@@ -304,7 +313,10 @@ INSERT INTO `transactions` (`id`, `room_packages_id`, `users_id`, `transaction_t
 (28, 2, 4, 50000, 'PENDING', NULL, '2020-07-27 02:57:44', '2020-07-27 02:57:44', 3, 884),
 (29, 1, 4, 6000000, 'PENDING', NULL, '2020-08-25 23:33:17', '2020-08-25 23:33:17', 5, 557),
 (30, 2, 4, 50000, 'SUCCESS', NULL, '2020-09-03 02:01:43', '2020-09-03 02:17:32', 3, 617),
-(31, 2, 4, 50000, 'PENDING', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52', 3, 690);
+(31, 2, 4, 50000, 'PENDING', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52', 3, 690),
+(32, 1, 3, 50000, 'SUCCESS', NULL, '2021-02-16 02:08:27', '2021-02-16 02:11:37', 1, 997),
+(33, 1, 3, 500000, 'PENDING', NULL, '2021-02-16 02:51:49', '2021-02-16 02:51:49', 2, 81),
+(34, 1, 3, 500000, 'PENDING', NULL, '2021-03-03 01:53:16', '2021-03-03 01:53:16', 2, 761);
 
 -- --------------------------------------------------------
 
@@ -359,7 +371,10 @@ INSERT INTO `transaction_details` (`id`, `transactions_id`, `username`, `nationa
 (28, 29, 'teddinata', 'Teddi', 'Belum diisi', '2020-08-27', NULL, '2020-08-25 23:33:17', '2020-08-25 23:33:17'),
 (29, 30, 'teddinata', 'Teddi', 'Belum diisi', '2020-09-17', '2020-09-03 02:03:49', '2020-09-03 02:01:43', '2020-09-03 02:03:49'),
 (30, 30, 'Teddinata', 'ID', 'Swasta', '2020-09-04', NULL, '2020-09-03 02:07:46', '2020-09-03 02:07:46'),
-(31, 31, 'teddinata', 'Teddi', 'Belum diisi', '2020-09-04', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52');
+(31, 31, 'teddinata', 'Teddi', 'Belum diisi', '2020-09-04', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52'),
+(32, 32, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-03', NULL, '2021-02-16 02:08:27', '2021-02-16 02:08:27'),
+(33, 33, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-02-17', NULL, '2021-02-16 02:51:49', '2021-02-16 02:51:49'),
+(34, 34, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-23', NULL, '2021-03-03 01:53:16', '2021-03-03 01:53:16');
 
 -- --------------------------------------------------------
 
@@ -656,7 +671,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -692,13 +707,13 @@ ALTER TABLE `room_types`
 -- AUTO_INCREMENT untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaction_details`
 --
 ALTER TABLE `transaction_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `travel_galleries`

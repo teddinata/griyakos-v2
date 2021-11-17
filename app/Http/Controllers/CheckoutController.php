@@ -24,9 +24,11 @@ class CheckoutController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $item = Transaction::with(['details', 'room_package', 'user', 'room_type'])->findOrFail($id);
+        $user = auth()->user();
+        $item = Transaction::with([
+            'details', 'room_package', 'user', 'room_type'])->findOrFail($id);
         return view('pages.checkout', [
-
+            'user' => $user,
             'item' => $item
         ]);
     }
@@ -47,9 +49,9 @@ class CheckoutController extends Controller
 
         TransactionDetail::create([
             'transactions_id' => $transaction->id,
-            'avatar' => Auth::user()->avatar,
+            // 'avatar' =>  $user = auth()->user(),
             'username' => Auth::user()->username,
-            'nationality' => Auth::user()->name,
+            'nationality' => Auth::user()->phone,
             'job' => 'Belum diisi',
             'checkin' => date('Y-m-d', strtotime($request->checkInDate))
         ]);
@@ -121,7 +123,8 @@ class CheckoutController extends Controller
            'first_name' => $transaction->user->name,
            'email' => $transaction->user->email
         ],
-        'enabled_payments' => ['gopay', 'transfer_bank', 'indomaret'],
+        'enabled_payments' => [
+            'gopay', 'bank_transfer', 'indomaret'],
         'vtweb' => []
         ];
 
@@ -131,9 +134,9 @@ class CheckoutController extends Controller
 
         //Redirect ke halaman midtrans
            header('Location: ' . $paymentUrl);
-          } catch (Exception $e) {
-        throw $e;
-           echo $e->getMessage();
+          }
+          catch (Exception $e) {
+            echo $e->getMessage();
          }
 
 

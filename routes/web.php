@@ -63,6 +63,7 @@ Route::get('/checkoutwisata/confirm/{id}', 'CheckoutWisataController@success')
     ->middleware(['auth', 'verified']);
 
 Route::get('/profil', 'ProfilController@index')
+    ->name('profil')
     ->middleware(['auth', 'verified']);
 
 
@@ -90,10 +91,6 @@ Route::get('/transaksi/kirim-bukti-pembayaran/{id}', 'Admin\PembayaranController
 Route::post('/transaksi/kirim-bukti-pembayaran/store/{id}', 'Admin\PembayaranController@store')
     ->name('pembayaran.konfirmasi')
     ->middleware(['auth', 'verified']);
-
-
-
-
 
 
 

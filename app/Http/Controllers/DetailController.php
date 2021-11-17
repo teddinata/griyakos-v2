@@ -12,8 +12,11 @@ class DetailController extends Controller
         $item = RoomPackage::with(['galleries'])
                     ->where('slug', $slug)
                     ->firstOrFail();
+        $user = auth()->user();
+
         return view('pages.detail',[
-            'item' => $item
+            'item' => $item,
+            'user' => $user
         ]);
     }
 }

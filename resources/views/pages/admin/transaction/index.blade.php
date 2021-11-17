@@ -7,13 +7,13 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Transaksi</h1>
-  
+
 </div>
 
 <div class="row">
     <div class="card-body">
         <div class="table-responsive">
-            
+
             <table class="table-bordered" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -69,8 +69,9 @@
 </div>
 
 
-</div>
-<!-- /.container-fluid --> --}}
+</div> --}}
+<!-- /.container-fluid -->
+
 
  <!-- Begin Page Content -->
  <div class="container-fluid">
@@ -110,7 +111,7 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        
+
                         @forelse ($items as $items)
                         <tr>
                             <td>{{ $items->id}}</td>
@@ -165,7 +166,7 @@
 
 @push('addon-script')
    <!-- Page level plugins -->
-  
+
 
    <!-- Page level custom scripts -->
    <script>

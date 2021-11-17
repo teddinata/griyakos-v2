@@ -15,23 +15,23 @@ class EditProfilController extends Controller
 {
     public function index ()
     {
-    
-          $item = auth()->user();
-          
-                    
-                 
+
+          $user = auth()->user();
+
+
+
         return view ('pages.editprofil ',[
-            'item' => $item
-           
+            'user' => $user
+
         ]);
     }
 
     public function edit($id)
     {
-        $item = User::findOrFail($id);
+        $user = User::findOrFail($id);
 
         return view ('editprofil.edit', [
-            'item' => $item
+            'user' => $user
         ]);
     }
 
@@ -39,36 +39,36 @@ class EditProfilController extends Controller
 
     public function update(EditProfilRequest $Request, $id)
     {
-        $item = User::findOrFail($id);
-        
-       
+        $user = User::findOrFail($id);
+
+
         //dd($Request->all());
-        $item->avatar = $Request->avatar;
-        $item->name = $Request->name;
-        $item->username = $Request->username;
-        $item->email = $Request->email;
-        $item->phone = $Request->phone;
-        $item->birth = $Request->birth;
-        $item->gender = $Request->gender;
+        $user->avatar = $Request->avatar;
+        $user->name = $Request->name;
+        $user->username = $Request->username;
+        $user->email = $Request->email;
+        $user->phone = $Request->phone;
+        $user->birth = $Request->birth;
+        $user->gender = $Request->gender;
         if ($Request->hasFile('avatar')){
             $Request->file('avatar')->move('images/',$Request->file('avatar')->getClientOriginalName());
-            $item->avatar = $Request->file('avatar')->getClientOriginalName();
-            $item->save();
+            $user->avatar = $Request->file('avatar')->getClientOriginalName();
+            $user->save();
         }
-       
 
-        
-      
-        $item->save();
-        
-        
+
+
+
+        $user->save();
+
+
 
         Alert::success('Update Sukses!', 'Profil Sukses di Update');
 
         return redirect()->route('editprofil');
-       
+
     }
 
     }
-        
+
 

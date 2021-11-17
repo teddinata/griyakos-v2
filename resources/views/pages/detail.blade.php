@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Detail Kos')
-    
+
 @section('content')
 <main>
     <section class="section-details-header"></section>
@@ -25,7 +25,7 @@
                     <div class="col-lg-8 pl-lg-0">
                         <div class="card card-details">
                             <h1>{{ $item->title }}</h1>
-                            <p>{{ $item->location }}</p>
+                            <strong style="font-size: 24px">{{ $item->location }}</strong>
 
                             @if($item->galleries->count())
                             <div class="gallery">
@@ -36,14 +36,14 @@
                                 <div class="xzoom-thumbs">
                                     @foreach ($item->galleries as $gallery )
                                         <a href="{{ Storage::url($gallery->image) }}">
-                                            <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery" 
+                                            <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery"
                                             width="128" xpreview="{{ Storage::url($gallery->image) }}">
                                         </a>
                                     @endforeach
                                 </div>
                              </div>
                             @endif
-                             
+
                              <h2>Tentang Kamar Kos</h2>
                             <p>
                                 {!! $item->about !!}
@@ -52,8 +52,8 @@
 
                             @if ($item->facilities->count())
                             <div class="col-md-4 border-left">
-                                <div class="description"> 
-                                <img src="{{ url ('frontend/images/fasilitas.png')}}" 
+                                <div class="description">
+                                <img src="{{ url ('frontend/images/fasilitas.png')}}"
                                     alt=""
                                     class="features-image"
                                     >
@@ -62,12 +62,12 @@
                                         @foreach ($item->facilities as $facilities)
                                             <p>{{$facilities->facilities}}</p>
                                         @endforeach
-                                        
+
                                    </div>
                                 </div>
                             </div>
-                            @endif         
-                    
+                            @endif
+
                             </div>
                         </div>
                     </div>
@@ -91,28 +91,28 @@
                                <input type="text" class="form-control datepicker" name="checkInDate"
                                id="doeRoom" placeholder="Choose your date">
                            </div>
-                           <div> 
-                            
+                           <div>
+
                             <h6>Pilih Durasi Sewa</h6>
                              <label for="durasi" class="sr-only">Pilih Durasi Sewa</label>
-                             <select 
-                             name="roomTypes" 
-                             id="roomTypes" 
+                             <select
+                             name="roomTypes"
+                             id="roomTypes"
                              required class="form-control">
                                  <option roomPrice="0" value="">Pilih Durasi</option>
                                  @foreach ($item->room_types as $room_type)
                                     <option
                                         roomPrice={{number_format($room_type->price, 0, ".", ".")}}
-                                        value="{{$room_type->id}}" 
+                                        value="{{$room_type->id}}"
                                         >{{$room_type->durasi}}
                                     </option>
                                  @endforeach
-                                
+
                              </select>
                          </div>
-                         
-                           
-                         
+
+
+
                                 <hr>
                                 <h6>Informasi Kamar</h6>
                                 <table class="trip-information">
@@ -121,22 +121,22 @@
                                         <td width="50%" class="text-right" selected>
                                             {{$item->type}} Kamar
                                         </td>
-                                        
+
                                     </tr>
-                                 
+
                                     <tr>
                                         <th width="50%">Harga</th>
                                         <td width="50%" class="text-right" id="totalPrice">
                                             Rp 0
                                         </td>
-                                    </tr>   
+                                    </tr>
                                 </table>
                         </div>
-                          
-                       
+
+
                         <div class="join-container">
                             @auth
-                       
+
                                 <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
                                     Pesan Kamar
                                 </button>
@@ -144,11 +144,11 @@
                             @endauth
                             @guest
                         <a href="{{route ('login')}}" class="btn btn-block btn-join-now mt-3 py-2">
-                            Login or Register to Join   
+                            Login or Register to Join
                         </a>
                             @endguest
                     </div>
-                    
+
                 </div>
             </div>
             </div>
@@ -174,8 +174,8 @@
             tint: '#333',
             xoffset: 15,
         });
-    
-       
+
+
     var date = new Date();
     date.setDate(date.getDate());
     $('.datepicker').datepicker({
@@ -186,7 +186,7 @@
         }
     });
 
-    
+
 
     $("#roomTypes").change(function(){
         let selectedRoom = $(this).children("option:selected").attr("roomPrice");

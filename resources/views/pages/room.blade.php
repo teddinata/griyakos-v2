@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Pilih Kamar')
-   
+@section('title', 'Pilih Kamar - GRIYA KOS CILACAP BAWEAN')
 
-    
+
+
 @section('content')
 <main>
     <section class="section-room-header"></section>
@@ -20,8 +20,8 @@
                         </nav>
                     </div>
                 </div>
-            
-            
+
+
                 <section class="section-room-list" id="roomlist">
                     <div class="container" >
                         <div class="section-room-travel row justify-content-center">
@@ -47,16 +47,15 @@
 </main>
 @endsection
 
-   
 
 
-   
 
-   
-        
-       
-   
-    
-       
-      
- 
+
+
+
+
+
+
+
+
+

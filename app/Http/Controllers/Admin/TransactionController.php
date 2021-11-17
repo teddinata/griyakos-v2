@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\TransactionRequest;
+use App\RoomPackage;
 use App\Transaction;
 use App\Pembayaran;
 use App\Http\Requests\Admin\PembayaranRequest;
@@ -30,6 +31,7 @@ class TransactionController extends Controller
         return view ('pages.admin.transaction.index', [
             'items' => $items
         ]);
+        // dd($items);
     }
 
     /**
@@ -39,7 +41,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -54,7 +56,7 @@ class TransactionController extends Controller
         $data['slug'] = Str::slug($request->title);
 
         Transaction::create($data);
-        
+
         return redirect()->route('transaction.index');
     }
 
@@ -133,30 +135,34 @@ class TransactionController extends Controller
 
     public function lihat()
     {
+        $user = auth()->user();
         $id = Auth::user()->id;
         $items = Transaction::with([
             'details', 'room_package', 'room_type'
         ])->where('users_id', $id)->get();
 
         return view ('pages.history-order.index', [
-            'items' => $items
+            'items' => $items,
+            'user' => $user
         ]);
     }
 
     public function detail($id)
     {
+        $user = auth()->user();
         $item = Transaction::with([
             'details', 'room_package', 'room_type'
         ])->findOrFail($id);
 
         return view('pages.history-order.detail', [
-            'item' => $item
+            'item' => $item,
+            'user' => $user
         ]);
     }
 
     public function cetak_pdf($id)
     {
-
+        
         $item = Transaction::with([
             'details', 'room_package', 'user', 'room_type'
         ])->findOrFail($id);
@@ -176,5 +182,5 @@ class TransactionController extends Controller
     	return $pdf->stream('invoice.pdf');
     }
 
-   
+
 }
