@@ -38,13 +38,17 @@ class CheckoutController extends Controller
         // $room_package = RoomPackage::findOrFail($id);
         $room_type = RoomType::findOrFail($request->roomTypes);
 
+        // $code = 'GRIYA-' . mt_rand(000,999);
+
+
         $transaction = Transaction::create([
             'room_packages_id' => $id,
             'users_id' => Auth::user()->id,
             'transaction_total' => $room_type->price,
             'kode_unik' => mt_rand(0,999),
             'transaction_status' => 'PENDING',
-            'room_types_id' => $request->roomTypes
+            'room_types_id' => $request->roomTypes,
+            // 'code' => $code
         ]);
 
         TransactionDetail::create([
@@ -53,7 +57,8 @@ class CheckoutController extends Controller
             'username' => Auth::user()->username,
             'nationality' => Auth::user()->phone,
             'job' => 'Belum diisi',
-            'checkin' => date('Y-m-d', strtotime($request->checkInDate))
+            'checkin' => date('Y-m-d', strtotime($request->checkInDate)),
+            // 'code' => $code
         ]);
 
         return redirect()->route('checkout', $transaction->id);

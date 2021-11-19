@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Detail Wisata')
-    
+
 @section('content')
 <main>
     <section class="section-details-header"></section>
@@ -39,12 +39,12 @@
                                 <div class="xzoom-thumbs">
                                     @foreach ( $item->travel_galleries as $travelgallery )
                                     <a href="{{ Storage::url($travelgallery->image)}}">
-                                        <img src="{{ Storage::url($travelgallery->image)}}" class="xzoom-gallery" 
+                                        <img src="{{ Storage::url($travelgallery->image)}}" class="xzoom-gallery"
                                         width="128" xpreview="{{ Storage::url($travelgallery->image)}}">
                                      </a>
-                                        
+
                                     @endforeach
-                                
+
                                 </div>
                              </div>
                             @endif
@@ -54,7 +54,7 @@
                             <div class="features row">
                                 <div class="col-md-4 border-left">
                                     <div class="description">
-                                    <img src="{{ url('frontend/images/ic_event.png')}}" 
+                                    <img src="{{ url('frontend/images/ic_event.png')}}"
                                         alt=""
                                         class="features-image"
                                         >
@@ -66,11 +66,11 @@
                                 </div>
                                 <div class="col-md-4 border-left">
                                     <div class="description">
-                                    <img src="{{url ('frontend/images/ic_language.png')}}" 
+                                    <img src="{{url ('frontend/images/ic_language.png')}}"
                                         alt=""
                                         class="features-image"
                                         >
-                                        
+
                                        <div class="description">
                                             <h3>Language</h3>
                                         <p>{{$item->language}}</p>
@@ -79,10 +79,10 @@
                                 </div>
                                 <div class="col-md-4 border-left">
                                     <div class="description">
-                                    <img src="{{url ('frontend/images/ic_foods.png')}}" 
+                                    <img src="{{url ('frontend/images/ic_foods.png')}}"
                                         alt=""
                                         class="features-image"
-                                        >    
+                                        >
                                        <div class="description">
                                             <h3>Foods</h3>
                                         <p>{{$item->foods}}</p>
@@ -109,34 +109,34 @@
                                         <td width="50%" class="text-right">
                                             {{\Carbon\Carbon::create($item->departure_date)->format('F n, Y')}}
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Duration</th>
                                         <td width="50%" class="text-right">
                                             {{ $item->duration }}
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Type</th>
                                         <td width="50%" class="text-right">
                                             {{ $item->type }}
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <th width="50%">Price</th>
                                         <td width="50%" class="text-right">
                                             Rp {{ $item->price }}.000 / orang
                                         </td>
-                                        
+
                                     </tr>
                                 </table>
                             </div>
                             <div class="join-container">
                                @auth
-                               <form action="{{ route ('checkoutwisata-process', $item->id)}}" method="POST">
+                               <form action="{{ route ('checkoutwisata_process', $item->id)}}" method="POST">
                                 @csrf
                                     <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
                                         Join Now
@@ -160,7 +160,7 @@
 
 @push('prepend-style')
 <link rel="stylesheet" href="{{ url ('frontend/libraries/xzoom/xzoom.css')}}">
-<link rel="stylesheet" href="{{ url ('frontend/libraries/gijgo/css/gijgo.min.css')}}">    
+<link rel="stylesheet" href="{{ url ('frontend/libraries/gijgo/css/gijgo.min.css')}}">
 @endpush
 
 @push('addon-script')
@@ -174,7 +174,7 @@
             tint: '#333',
             xoffset: 15,
         });
-        
+
     $('.datepicker').datepicker({
         uiLibrary: 'bootstrap4',
         icons:{
@@ -182,5 +182,5 @@
         }
     });
     });
-</script>    
+</script>
 @endpush

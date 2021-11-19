@@ -6,6 +6,7 @@ use App\TravelTransaction;
 use App\TravelTransactionDetail;
 use App\TravelPackage;
 use Carbon\Carbon;
+use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +16,11 @@ class CheckoutWisataController extends Controller
 {
     public function index (Request $request, $id)
     {
+        $user = auth()->user();
         $item = TravelTransaction::with(['details', 'travel_package', 'user'])->findOrFail($id);
         return view('pages.checkoutwisata',[
-            'item' => $item
+            'item' => $item,
+            'user' => $user
         ]);
     }
 
@@ -72,7 +75,7 @@ class CheckoutWisataController extends Controller
         $travel_transaction = TravelTransaction::with(['travel_package'])->find($id);
 
         $travel_transaction->travel_transaction_total += $travel_transaction->travel_package->price;
-        
+
 
         $travel_transaction->save();
 

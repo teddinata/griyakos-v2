@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Mar 2021 pada 13.05
+-- Waktu pembuatan: 17 Nov 2021 pada 11.03
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -79,19 +79,15 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `room_packages_id`, `image`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'assets/gallery/MK6jJn9YKyS4mUuSalhrcKihHxWgN13ILJNUIlv3.jpeg', '2020-10-08 09:13:56', '2020-03-25 10:54:17', '2020-10-08 09:13:56'),
-(2, 2, 'assets/gallery/WNMTP9PMEMXA5wpU6diGjQrMve4p9v3wxYjXNrgi.jpeg', '2020-10-08 09:13:59', '2020-03-28 10:29:05', '2020-10-08 09:13:59'),
-(3, 1, 'assets/gallery/S1bOMhrW5A8qbxEkTbRob9CQ1Plb12FjM439h3q9.jpeg', '2020-10-08 09:14:02', '2020-09-13 21:44:43', '2020-10-08 09:14:02'),
-(4, 1, 'assets/gallery/WItNSGAdbMgN16y8PX1ohjWSIkQ4cPBqqPBzFzfl.jpeg', '2021-03-03 03:21:25', '2020-10-08 09:15:15', '2021-03-03 03:21:25'),
-(5, 1, 'assets/room_gallery/uHqBVxuHeD5Dkg4lMQutjt4oupBZCUj049ZJm296.jpeg', '2021-03-03 03:24:20', '2021-03-03 03:21:49', '2021-03-03 03:24:20'),
-(6, 1, 'assets/room_gallery/hgO4Py7HEU50MMnX2MDsL93SVLjZbw41gbtW8KLO.jpeg', NULL, '2021-03-03 03:24:34', '2021-03-03 03:24:34'),
-(7, 1, 'assets/room_gallery/6gACQ4vEgAWwRRdghxydIptP9NPO4Tfsb9KKHinf.jpeg', NULL, '2021-03-03 03:24:57', '2021-03-03 03:24:57'),
-(8, 1, 'assets/room_gallery/zUmNgTWBT2RvFIXdqKD2E94PpUXH1IW1gq0IGgFK.jpeg', NULL, '2021-03-03 03:25:17', '2021-03-03 03:25:17'),
-(9, 1, 'assets/room_gallery/u8po2DMfs6urE3wyXovXvapZiymqEikzkJDZ7RV6.jpeg', NULL, '2021-03-03 03:25:31', '2021-03-03 03:25:31'),
-(10, 2, 'assets/room_gallery/t9rWDlmTOGiguSjiDArow1Zmja9m9fvCeB7ixLld.jpeg', NULL, '2021-03-03 03:25:49', '2021-03-03 03:25:49'),
-(11, 2, 'assets/room_gallery/wTVxl9N1sHrfvUWZKEGII1HSpfPPPZxwUD7wSiNR.jpeg', NULL, '2021-03-03 03:26:11', '2021-03-03 03:26:11'),
-(12, 2, 'assets/room_gallery/MI1yCGOM5r1ejWrQ192OUcyCjJHJ2wcveCVgdXr1.jpeg', NULL, '2021-03-03 03:26:28', '2021-03-03 03:26:28'),
-(13, 2, 'assets/room_gallery/zvI6ih1PEWeZwpzw0JuIVjcAtJfieenaezcGEgZ0.jpeg', NULL, '2021-03-03 03:26:47', '2021-03-03 03:26:47');
+(15, 1, 'assets/room_gallery/emIHf6tThwXfYVgV4m1qJ7PewlD1PQ9KzDj8k6e4.jpg', NULL, '2021-11-17 02:58:40', '2021-11-17 02:58:40'),
+(16, 1, 'assets/room_gallery/uhAViIYuYPH7PqhlR4b7ub1mvWRUbuO9KhTAFkzn.jpg', NULL, '2021-11-17 02:58:56', '2021-11-17 02:58:56'),
+(17, 1, 'assets/room_gallery/Ihw64sI4RjGHTRQxG8LE4hELidocp6xRoezJu9aK.jpg', NULL, '2021-11-17 02:59:06', '2021-11-17 02:59:06'),
+(18, 1, 'assets/room_gallery/jQefUtfULdRfDnin7tTf9VpeUNccg15mhO7GpNjz.jpg', NULL, '2021-11-17 03:00:02', '2021-11-17 03:00:02'),
+(19, 1, 'assets/room_gallery/Zbr7x5a5jdrP8oAoToMkFqD0G4G0Z4vR2KofGHzK.jpg', NULL, '2021-11-17 03:00:31', '2021-11-17 03:00:31'),
+(20, 2, 'assets/room_gallery/57bFDZpC2FEmy9OeYVKocA77FTIyOipnfQnNFJEC.jpg', NULL, '2021-11-17 03:01:24', '2021-11-17 03:01:24'),
+(21, 2, 'assets/room_gallery/dMqYjFOoZWylj0LX6moLC2tyLBQ07DHin7hOLrgx.jpg', NULL, '2021-11-17 03:01:50', '2021-11-17 03:01:50'),
+(22, 2, 'assets/room_gallery/WozdxWpJEGu9Aq8tRfmMcR3uJLV95G3F0Yj4A6fB.jpg', NULL, '2021-11-17 03:02:17', '2021-11-17 03:02:17'),
+(23, 2, 'assets/room_gallery/oPHDb5RhjGh83DU7TOiIklLq9FNKLu0keNyyGx8R.jpg', NULL, '2021-11-17 03:02:28', '2021-11-17 03:02:28');
 
 -- --------------------------------------------------------
 
@@ -256,7 +252,6 @@ INSERT INTO `room_types` (`id`, `room_packages_id`, `durasi`, `price`, `deleted_
 (1, 1, '1 Hari', 50000, NULL, '2020-03-25 10:54:42', '2020-03-25 10:54:42'),
 (2, 1, '1 Bulan', 500000, NULL, '2020-03-25 10:58:41', '2020-03-25 10:58:41'),
 (3, 2, '1 Hari', 50000, NULL, '2020-03-28 10:48:27', '2020-03-28 10:48:27'),
-(4, 3, '1 Hari', 100000, NULL, '2020-03-28 21:16:08', '2020-03-28 21:16:08'),
 (5, 1, '1 Tahun', 6000000, NULL, '2020-03-29 19:21:35', '2020-03-29 19:21:35');
 
 -- --------------------------------------------------------
@@ -283,40 +278,13 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `room_packages_id`, `users_id`, `transaction_total`, `transaction_status`, `deleted_at`, `created_at`, `updated_at`, `room_types_id`, `kode_unik`) VALUES
-(1, 1, 1, 50000, 'IN_CART', NULL, '2020-03-25 10:54:56', '2020-03-25 10:54:56', NULL, 0),
-(2, 1, 1, 50000, 'IN_CART', NULL, '2020-03-25 10:59:28', '2020-03-25 10:59:28', NULL, 0),
-(3, 1, 1, 50000, 'IN_CART', NULL, '2020-03-25 11:13:24', '2020-03-25 11:13:24', NULL, 0),
-(4, 1, 1, 50000, 'PENDING', NULL, '2020-03-28 10:16:59', '2020-03-28 10:17:15', 1, 0),
-(5, 2, 1, -550000, 'IN_CART', NULL, '2020-03-28 10:48:58', '2020-03-28 10:49:05', 3, 0),
-(6, 1, 4, 500000, 'IN_CART', NULL, '2020-03-28 20:35:21', '2020-03-28 20:43:52', 2, 0),
-(7, 3, 3, 100000, 'PENDING', NULL, '2020-03-28 21:16:33', '2020-03-28 21:16:56', 4, 0),
-(8, 2, 3, 50000, 'PENDING', NULL, '2020-03-28 22:05:23', '2020-03-28 22:05:30', 3, 0),
-(9, 2, 3, 50000, 'PENDING', NULL, '2020-03-28 22:08:31', '2020-03-28 22:08:40', 3, 0),
-(10, 1, 3, 6000000, 'PENDING', NULL, '2020-03-29 19:22:10', '2020-03-29 19:22:22', 5, 0),
-(11, 1, 3, 6000000, 'SUCCESS', NULL, '2020-03-29 19:40:46', '2020-03-29 19:44:16', 5, 0),
-(12, 1, 4, 500000, 'IN_CART', NULL, '2020-04-02 06:40:15', '2020-04-02 06:40:15', 2, 0),
-(13, 1, 4, 500000, 'IN_CART', NULL, '2020-04-02 06:54:56', '2020-04-02 06:54:56', 2, 0),
-(14, 1, 4, 500000, 'FAILED', NULL, '2020-04-02 10:14:50', '2020-04-02 11:05:21', 2, 0),
-(15, 1, 4, 6000000, 'IN_CART', NULL, '2020-04-02 11:09:37', '2020-04-02 11:26:27', 5, 0),
-(16, 1, 4, 500000, 'SUCCESS', NULL, '2020-04-02 21:49:42', '2020-04-02 21:52:05', 2, 0),
-(17, 1, 1, 0, 'IN_CART', NULL, '2020-04-07 10:39:59', '2020-04-07 10:40:08', 2, 0),
-(18, 1, 1, 500000, 'IN_CART', NULL, '2020-04-07 10:40:35', '2020-04-07 10:40:35', 2, 0),
-(19, 1, 1, 6000000, 'PENDING', NULL, '2020-04-07 10:41:26', '2020-04-07 10:41:32', 5, 0),
-(20, 1, 1, 500000, 'PENDING', NULL, '2020-04-08 09:34:31', '2020-04-08 09:34:38', 2, 663),
-(21, 1, 1, 500000, 'IN_CART', NULL, '2020-04-13 07:33:20', '2020-04-13 07:33:20', 2, 121),
-(22, 1, 1, 500000, 'IN_CART', NULL, '2020-04-13 07:34:13', '2020-04-13 07:34:13', 2, 309),
-(23, 1, 1, 500000, 'FAILED', NULL, '2020-04-13 07:35:12', '2020-04-19 06:19:35', 2, 348),
-(24, 1, 1, 500000, 'CANCEL', NULL, '2020-04-13 07:35:23', '2020-04-19 06:19:21', 2, 77),
-(25, 1, 1, 500000, 'SUCCESS', NULL, '2020-04-13 07:36:44', '2020-04-19 05:42:13', 2, 443),
-(26, 1, 10, 500000, 'SUCCESS', NULL, '2020-04-19 21:04:21', '2020-04-19 21:11:48', 2, 23),
-(27, 1, 4, 500000, 'PENDING', NULL, '2020-05-11 07:54:09', '2020-05-11 07:54:09', 2, 988),
-(28, 2, 4, 50000, 'PENDING', NULL, '2020-07-27 02:57:44', '2020-07-27 02:57:44', 3, 884),
-(29, 1, 4, 6000000, 'PENDING', NULL, '2020-08-25 23:33:17', '2020-08-25 23:33:17', 5, 557),
-(30, 2, 4, 50000, 'SUCCESS', NULL, '2020-09-03 02:01:43', '2020-09-03 02:17:32', 3, 617),
-(31, 2, 4, 50000, 'PENDING', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52', 3, 690),
-(32, 1, 3, 50000, 'SUCCESS', NULL, '2021-02-16 02:08:27', '2021-02-16 02:11:37', 1, 997),
-(33, 1, 3, 500000, 'PENDING', NULL, '2021-02-16 02:51:49', '2021-02-16 02:51:49', 2, 81),
-(34, 1, 3, 500000, 'PENDING', NULL, '2021-03-03 01:53:16', '2021-03-03 01:53:16', 2, 761);
+(37, 1, 3, 500000, 'PENDING', NULL, '2021-03-08 23:28:57', '2021-03-08 23:28:57', 2, 676),
+(38, 2, 1, 50000, 'PENDING', NULL, '2021-03-12 00:49:19', '2021-03-12 00:49:19', 3, 47),
+(39, 2, 1, 50000, 'PENDING', NULL, '2021-03-12 00:49:52', '2021-03-12 00:49:52', 3, 98),
+(40, 1, 3, 500000, 'PENDING', NULL, '2021-11-16 18:28:37', '2021-11-16 18:28:37', 2, 536),
+(41, 1, 3, 500000, 'PENDING', NULL, '2021-11-16 21:14:05', '2021-11-16 21:14:05', 2, 358),
+(42, 1, 3, 500000, 'PENDING', NULL, '2021-11-16 21:35:34', '2021-11-16 21:35:34', 2, 590),
+(43, 1, 3, 50000, 'PENDING', NULL, '2021-11-16 21:36:30', '2021-11-16 21:36:30', 1, 408);
 
 -- --------------------------------------------------------
 
@@ -374,7 +342,16 @@ INSERT INTO `transaction_details` (`id`, `transactions_id`, `username`, `nationa
 (31, 31, 'teddinata', 'Teddi', 'Belum diisi', '2020-09-04', NULL, '2020-09-03 02:09:52', '2020-09-03 02:09:52'),
 (32, 32, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-03', NULL, '2021-02-16 02:08:27', '2021-02-16 02:08:27'),
 (33, 33, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-02-17', NULL, '2021-02-16 02:51:49', '2021-02-16 02:51:49'),
-(34, 34, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-23', NULL, '2021-03-03 01:53:16', '2021-03-03 01:53:16');
+(34, 34, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-23', NULL, '2021-03-03 01:53:16', '2021-03-03 01:53:16'),
+(35, 35, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-19', NULL, '2021-03-08 20:36:38', '2021-03-08 20:36:38'),
+(36, 36, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-23', NULL, '2021-03-08 21:18:43', '2021-03-08 21:18:43'),
+(37, 37, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-03-16', NULL, '2021-03-08 23:28:57', '2021-03-08 23:28:57'),
+(38, 38, 'teddinata', 'Teddinata', 'Belum diisi', '2021-03-19', NULL, '2021-03-12 00:49:19', '2021-03-12 00:49:19'),
+(39, 39, 'teddinata', 'Teddinata', 'Belum diisi', '2021-03-18', NULL, '2021-03-12 00:49:52', '2021-03-12 00:49:52'),
+(40, 40, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-11-25', NULL, '2021-11-16 18:28:37', '2021-11-16 18:28:37'),
+(41, 41, 'teddi', 'Teddinata Kusuma', 'Belum diisi', '2021-11-18', NULL, '2021-11-16 21:14:05', '2021-11-16 21:14:05'),
+(42, 42, 'teddi', '08912312399', 'Belum diisi', '2021-11-25', NULL, '2021-11-16 21:35:34', '2021-11-16 21:35:34'),
+(43, 43, 'teddi', '08912312399', 'Belum diisi', '2021-11-24', NULL, '2021-11-16 21:36:30', '2021-11-16 21:36:30');
 
 -- --------------------------------------------------------
 
@@ -390,13 +367,6 @@ CREATE TABLE `travel_galleries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `travel_galleries`
---
-
-INSERT INTO `travel_galleries` (`id`, `travel_packages_id`, `image`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'assets/travel-gallery/CjT1UXkPHczKOXMSNPsCyzTAkxfxwOpOVj8miA4A.jpeg', NULL, '2020-10-08 11:46:44', '2020-10-08 11:46:44');
 
 -- --------------------------------------------------------
 
@@ -671,7 +641,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -707,13 +677,13 @@ ALTER TABLE `room_types`
 -- AUTO_INCREMENT untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaction_details`
 --
 ALTER TABLE `transaction_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT untuk tabel `travel_galleries`
