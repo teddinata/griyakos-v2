@@ -56,11 +56,11 @@
                                     <tbody>
                                         <tr>
                                                 <td>
-                                                    @if (Auth::user()->avatar)
+                                                    {{-- @if (Auth::user()->avatar)
                                                         <img src="{{asset('images/'.$user->avatar)}}" class="user-photo" alt="" width="40" height="40" style="border-radius: 50%">
                                                     @else
                                                     <img src="http://ui-avatars.com/api/?name={{$detail->username}}"  height="60" class="rounded-circle" name="avatar"/>
-                                                    @endif
+                                                    @endif --}}
 
                                                 </td>
                                                 @forelse ($item->details as $detail)

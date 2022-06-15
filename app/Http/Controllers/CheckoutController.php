@@ -122,7 +122,7 @@ class CheckoutController extends Controller
         $midtrans_param = [
         'transaction_details' => [
           'order_id' => 'MIDTRANS-' . $transaction->id,
-         'gross_amount' => (int) $transaction->transaction_total
+         'gross_amount' => (int) $transaction->transaction_total+$transaction->kode_unik
         ],
         'customer_details' => [
            'first_name' => $transaction->user->name,

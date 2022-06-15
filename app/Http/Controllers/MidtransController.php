@@ -16,7 +16,7 @@ class MidtransController extends Controller
 {
     public function notificationHandler(Request $request)
     {
-        dd("ini midtrans");
+        
          //set konfigurasi midtrans
          Config::$serverKey = config('midtrans.serverKey');
          Config::$isProduction = config('midtrans.isProduction');

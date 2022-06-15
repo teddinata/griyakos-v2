@@ -55,7 +55,7 @@
                     <li class="nav-item dropdown" style="color: #fff;">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Halo, {{ Auth::user()->name }}! <span class="caret"></span>
-                            <img src="{{asset('images/'.$user->avatar)}}" class="user-photo"  alt="" style="border-radius: 50%">
+                            {{-- <img src="{{asset('images/'.$user->avatar)}}" class="user-photo"  alt="" style="border-radius: 50%"> --}}
 
 
                         </a>

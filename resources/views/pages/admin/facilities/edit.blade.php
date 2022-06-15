@@ -7,7 +7,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 <h1 class="h3 mb-0 text-gray-800">Edit Gallery</h1>
-  
+
 </div>
 
     @if ($errors->any())
@@ -33,7 +33,6 @@
                         <option value="{{ $room_package->id}}">
                         {{ $room_package->title}}
                     </option>
-                        
                     @endforeach
                 </select>
             </div>
@@ -42,7 +41,7 @@
                 <input type="text" class="form-control" name="facilities" placeholder="Fasilitas" class="form-control" value=" {{ $item->facilities }}">
             </div>
                 <button type="submit" class="btn btn-primary btn-block">Ubah</button>
-                            
+
     </form>
     </div>
 </div>
