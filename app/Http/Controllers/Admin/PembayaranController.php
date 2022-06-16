@@ -21,10 +21,12 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $item = Pembayaran::all();
-        
+        // show pembayaran where transactions id  is available
+        $item = Pembayaran::where('transactions_id', $request->id)->get();
+        // $item = Pembayaran::where('transactions_id', '=', $request->id)->get();
+
         return view ('pages.pembayaran.index', [
             'item' => $item
         ]);
@@ -36,10 +38,10 @@ class PembayaranController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
-    {         
+    {
         return view('pages.pembayaran.create', [
             'id' => $id
-            
+
         ]);
     }
 
@@ -62,7 +64,7 @@ class PembayaranController extends Controller
        ]);
             $foto = $request->foto;
             $foto = $foto->getClientOriginalName();
-        
+
         $pembayaran = Pembayaran::create([
             'transactions_id' => $request->id,
             'foto' => $foto,

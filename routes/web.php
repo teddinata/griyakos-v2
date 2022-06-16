@@ -111,7 +111,9 @@ Route::prefix('admin')
         Route::get('/transaction/nota/cetak_pdf/{id}', 'TransactionController@cetak_pdf')
             ->name('transaction.cetak_pdf');
 
-        Route::resource('pembayaran', 'PembayaranController');
+        Route::get('pembayaran/{id}', 'PembayaranController@index')->name('pembayaran.index');
+
+        // Route::resource('pembayaran', 'PembayaranController');
 
         Route::resource('travel-package', 'TravelPackageController');
         Route::resource('travel-gallery', 'TravelGalleryController');
