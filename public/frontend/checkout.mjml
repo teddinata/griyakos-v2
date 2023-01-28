@@ -5,7 +5,7 @@
     vertical-align="top" padding-bottom="0px"
     padding-bottom="0px" border-bottom="1px dashed #eee">
     <mj-column vertical-align="top" width="100%">
-        <mj-image src="images/logokosan2.png"
+        <mj-image src="images/logo.png"
         alt=""
         align="center"
         border="none"

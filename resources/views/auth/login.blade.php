@@ -24,7 +24,7 @@
                         <form method="POST" action="{{ route('login') }}">
                         @csrf
                            <div class="text-center">
-                               <img src="frontend/images/logokosan2.png"
+                               <img src="frontend/images/logo.png"
                                alt=""
                                class="w-50 mb-4"
                                />
