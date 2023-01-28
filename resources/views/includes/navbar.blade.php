@@ -2,7 +2,7 @@
  <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="{{ url ('/')}}" class="navbar-brand">
-        <img src="{{ url ('frontend/images/logo.png')}}" alt="Logo GriyaKos">
+        <img src="{{ url ('frontend/images/logokosan2.png')}}" style="width: 85px; height: 85px;" alt="Logo GriyaKos">
         </a>
         <button class="navbar-toggler navbar-toggler-right"
          type="button"

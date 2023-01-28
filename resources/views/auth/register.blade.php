@@ -11,7 +11,7 @@
            <div class="row page-login d-flex align-items-center">
            <div class="section-left col-12 col-md-6">
               <h1 class="mb-4">Stay With Us <br/> Feel Like Home</h1>
-              <img src="frontend/images/login-image.png" 
+              <img src="frontend/images/login-image.png"
               alt=""
               class="w-75 d-none d-sm-flex"
               />
@@ -23,20 +23,20 @@
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
                            <div class="text-center">
-                               <img src="frontend/images/logo.png" 
+                               <img src="frontend/images/logokosan2.png"
                                alt=""
-                               class="w-50 mb-4"
+                               class="w-100 mb-4"
                                />
                            </div>
                            <form>
                               <div class="form-group">
                                   <label for="exampleInputEmail1">{{ __('Nama Lengkap') }}</label>
-                                  <input 
-                                    type="name" 
-                                    class="form-control @error('name') is-invalid @enderror" 
-                                    id="name" 
-                                    name="name" 
-                                    value="{{ old('name') }}" 
+                                  <input
+                                    type="name"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    id="name"
+                                    name="name"
+                                    value="{{ old('name') }}"
                                     required autocomplete="name" autofocus
                                     />
                                     @error('name')
@@ -47,12 +47,12 @@
                                 </div>
                                     <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('Username') }}</label>
-                                    <input 
-                                      type="username" 
-                                      class="form-control @error('username') is-invalid @enderror" 
+                                    <input
+                                      type="username"
+                                      class="form-control @error('username') is-invalid @enderror"
                                       id="Username"
-                                      name="username" 
-                                      value="{{ old('username') }}" 
+                                      name="username"
+                                      value="{{ old('username') }}"
                                       required autocomplete="username" autofocus
                                        />
                                       @error('username')
@@ -63,12 +63,12 @@
                                   </div>
                                   <div class="form-group">
                                     <label for="phone">{{ __('Nomor HP') }}</label>
-                                    <input 
-                                      type="phone" 
-                                      class="form-control @error('phone') is-invalid @enderror" 
-                                      id="phone" 
-                                      name="phone" 
-                                      value="{{ old('phone') }}" 
+                                    <input
+                                      type="phone"
+                                      class="form-control @error('phone') is-invalid @enderror"
+                                      id="phone"
+                                      name="phone"
+                                      value="{{ old('phone') }}"
                                       required autocomplete="phone" autofocus
                                       />
                                       @error('phone')
@@ -79,13 +79,13 @@
                                   </div>
                                 <div class="form-group">
                                 <label for="exampleInputEmail1">{{ __ ('E-Mail Adress')}}</label>
-                                <input 
-                                type="email" 
-                                class="form-control @error('email') is-invalid @enderror" 
-                                name="email" 
-                                value="{{ old('email') }}" 
+                                <input
+                                type="email"
+                                class="form-control @error('email') is-invalid @enderror"
+                                name="email"
+                                value="{{ old('email') }}"
                                 required autocomplete="email"
-                                id="email" 
+                                id="email"
                                 />
 
                                 @error('email')
@@ -96,9 +96,9 @@
                             </div>
                             <div class="form-group">
                               <label for="exampleInputPassword1">{{ __ ('Password')}} </label>
-                              <input 
-                                type="password" 
-                                class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" 
+                              <input
+                                type="password"
+                                class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"
                                 id="password"/>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -109,12 +109,12 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1"> {{ __ ('Confirm Password')}}</label>
                                 <input id="password-confirm"
-                                 type="password" 
-                                 class="form-control" 
-                                 name="password_confirmation" 
+                                 type="password"
+                                 class="form-control"
+                                 name="password_confirmation"
                                  required autocomplete="new-password">
                               </div>
-                           
+
                             <button type="submit" class="btn btn-login btn-block">{{ __('Register') }}</button>
                             <p class="text-center mt-4">
                             <a href="{{ route ('login') }}">Sudah Punya Akun? Login.</a>
@@ -125,7 +125,7 @@
               </div>
            </div>
           </div>
-       
+
     </main>
     </section>
 

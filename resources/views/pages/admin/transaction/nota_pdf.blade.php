@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Laporan Bulanan</title>
-    
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -14,18 +14,18 @@
 		}
 	</style>
 	<center>
-        
+
             <a href="" class="">
-                <img src="frontend/images/logo.png" alt="Logo GriyaKos">
+                <img src="frontend/images/logokosan2.png" alt="Logo GriyaKos">
                 </a>
                 <br>
                 <h6><a target="_blank" href="#">www.griyakos.com</a></h6>
                 <h5>Nota Bukti Transaksi</h5>
-	
+
     </center>
 <br>
     <h6>Telah Terima dari: {{ $item->user->name }}</h6>
- 
+
 
     <div class="card-shadow">
         <div class="card-body">
@@ -60,7 +60,7 @@
                                 <th>Nationality</th>
                                 <th>Pekerjaan</th>
                                 <th>Checkin</th>
-    
+
                             </tr>
                             @foreach ($item->details as $detail)
                                 <tr>
@@ -69,7 +69,7 @@
                                     <td>{{$detail->nationality}}</td>
                                     <td>{{$detail->job}}</td>
                                     <td>{{$detail->checkin}}</td>
-    
+
                             @endforeach
                         </table>
                     </td>
@@ -77,7 +77,7 @@
            </table>
         </div>
     </div>
- 
+
 
 </body>
 </html>

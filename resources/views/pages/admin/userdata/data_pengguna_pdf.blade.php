@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Laporan Bulanan</title>
-    
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -13,15 +13,15 @@
 		}
 	</style>
 	<center>
-        
+
             <a href="" class="">
-                <img src="frontend/images/logo.png" alt="Logo GriyaKos">
+                <img src="frontend/images/logokosan2.png" alt="Logo GriyaKos">
                 </a>
                 <br>
                 <h5>Laporan Bulanan</h5>
 		<h6><a target="_blank" href="#">www.griyakos.com</a></h5>
 	</center>
- 
+
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
@@ -51,6 +51,6 @@
 			@endforeach
 		</tbody>
 	</table>
- 
+
 </body>
 </html>
