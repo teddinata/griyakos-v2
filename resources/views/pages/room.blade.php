@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pilih Kamar - GRIYA KOS CILACAP BAWEAN')
+@section('title', 'Pilih Kamar - KOSAN.ONLINE')
 
 
 

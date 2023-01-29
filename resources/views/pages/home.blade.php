@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-GRIYA KOS CILACAP JALAN BAWEAN
+KOSAN.ONLINE
 @endsection
 
 @section('content')
