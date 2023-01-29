@@ -23,7 +23,7 @@
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
                            <div class="text-center">
-                               <img src="frontend/images/logokosan.png"
+                               <img src="frontend/images/logo.png"
                                alt=""
                                class="w-100 mb-4"
                                />
