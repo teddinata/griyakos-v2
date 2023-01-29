@@ -16,7 +16,7 @@
 	<center>
 
             <a href="" class="">
-                <img src="frontend/images/logo.png" alt="Logo GriyaKos">
+                <img src="frontend/images/logokosan.png" alt="Logo GriyaKos">
                 </a>
                 <br>
                 <h6><a target="_blank" href="#">www.griyakos.com</a></h6>

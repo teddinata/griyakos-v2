@@ -157,7 +157,7 @@ Route::prefix('admin')
 
 
 
-// Auth::routes(['verify' => true]);
+Auth::routes(['verify' => false]);
 
 //Midtrans
 Route::post('/midtrans/callback', 'MidtransController@notificationHandler');
